@@ -4,14 +4,14 @@ while(True):
 	process_list = []
 	c = os.popen("nvidia-smi")
 	t = c.read()
-	t = t.relace("\n","")
+	t = t.replace("\n","")
 	t = t.replace("|","")
 	t = t.replace("-","")
 	t = t.replace("=","")
 	t = t.replace("+","")
 	t = t.replace("/","")
 	t = t.split()
-	i = t.index('Usage')
+	i = t.index('Usage') + 2
 	while(i<len(t)-1):
 		process_list.append(t[i])
 		i = 5 + i
